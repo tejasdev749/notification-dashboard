@@ -1,10 +1,10 @@
 import { useState } from 'react'
-import { useNotifications } from '../hooks/useNotifications'
+import { useNotificationsContext } from '../contexts/NotificationsContext'
 import NotificationPanel from './NotificationPanel'
 
 export default function NotificationBell() {
   const [isOpen, setIsOpen] = useState(false)
-  const { unreadCount } = useNotifications()
+  const { unreadCount } = useNotificationsContext()
 
   const togglePanel = () => {
     setIsOpen(!isOpen)

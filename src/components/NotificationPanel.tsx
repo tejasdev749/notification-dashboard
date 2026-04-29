@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react'
 import NotificationList from './NotificationList'
-import { useNotifications } from '../hooks/useNotifications'
+import { useNotificationsContext } from '../contexts/NotificationsContext'
 
 type Props = {
   isOpen: boolean
@@ -15,7 +15,7 @@ export default function NotificationPanel({ isOpen, onClose }: Props) {
     markAsRead,
     markAllAsRead,
     clearNotifications
-  } = useNotifications()
+  } = useNotificationsContext()
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
