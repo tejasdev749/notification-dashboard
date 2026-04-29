@@ -54,7 +54,7 @@ export default function NotificationList({
       </div>
 
       {/* Tabs */}
-      <div className="flex">
+      <div className="flex px-4">
         <button
           onClick={() => setActiveTab("unread")}
           className={`px-4 py-3 text-sm font-medium border-b-2 transition-colors ${
@@ -78,7 +78,7 @@ export default function NotificationList({
       </div>
 
       {/* Notifications */}
-      <div className="flex-1 overflow-y-auto">
+      <div className="flex-1 overflow-y-auto ">
         {filteredNotifications.length === 0 ? (
           <div className="flex flex-col items-center justify-center h-full text-gray-500 p-8">
             <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mb-4">

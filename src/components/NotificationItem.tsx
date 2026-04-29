@@ -45,7 +45,7 @@ export default function NotificationItem({ notification, onMarkRead }: Props) {
 
   return (
     <div
-      className={`p-4  transition-colors hover:rounded-3xl hover:bg-gray-200  ${
+      className={`p-4 transition-colors hover:rounded-3xl hover:bg-gray-200  ${
         !notification.read ? 'bg-gray-100 ' : ''
       }`}
     >
