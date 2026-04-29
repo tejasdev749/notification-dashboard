@@ -1,3 +1,4 @@
+import { useState } from "react"
 import type { Notification } from "../types/notification"
 import NotificationItem from "./NotificationItem"
 
@@ -16,10 +17,15 @@ export default function NotificationList({
   onClearAll,
   connected
 }: Props) {
+  const [activeTab, setActiveTab] = useState<"unread" | "read">("unread")
   const unreadCount = notifications.filter(n => !n.read).length
 
+  const filteredNotifications = activeTab === "unread" 
+    ? notifications.filter(n => !n.read)
+    : notifications.filter(n => n.read)
+
   return (
-    <div className="h-full flex flex-col">
+    <div className="px-4 h-full flex flex-col">
       {/* Header */}
       <div className="p-4 bg-gray-100">
         <div className="flex items-center justify-between">
@@ -42,34 +48,52 @@ export default function NotificationList({
                   Mark all read
                 </button>
               )}
-              <button
-                onClick={onClearAll}
-                className="text-xs text-gray-500 hover:text-gray-700"
-              >
-                Clear all
-              </button>
             </div>
           )}
         </div>
       </div>
 
+      {/* Tabs */}
+      <div className="flex">
+        <button
+          onClick={() => setActiveTab("unread")}
+          className={`px-4 py-3 text-sm font-medium border-b-2 transition-colors ${
+            activeTab === "unread"
+              ? "text-blue-600 border-blue-600"
+              : "text-gray-900 border-transparent"
+          }`}
+        >
+          Unread
+        </button>
+        <button
+          onClick={() => setActiveTab("read")}
+          className={`px-4 py-3 text-sm font-medium border-b-2 transition-colors ${
+            activeTab === "read"
+              ? "text-blue-600 border-blue-600"
+              : "text-gray-900 border-transparent"
+          }`}
+        >
+          Read
+        </button>
+      </div>
+
       {/* Notifications */}
       <div className="flex-1 overflow-y-auto">
-        {notifications.length === 0 ? (
+        {filteredNotifications.length === 0 ? (
           <div className="flex flex-col items-center justify-center h-full text-gray-500 p-8">
             <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mb-4">
               <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 17h5l-5 5-5-5h5v-6h5v6z" />
               </svg>
             </div>
-            <p className="text-sm font-medium">No notifications yet</p>
+            <p className="text-sm font-medium">No {activeTab} notifications</p>
             <p className="text-xs text-center mt-1">
-              New notifications will appear here when they arrive
+              {activeTab === "unread" ? "You're all caught up!" : "No read notifications yet"}
             </p>
           </div>
         ) : (
           <div>
-            {notifications.map(notification => (
+            {filteredNotifications.map(notification => (
               <NotificationItem
                 key={notification.id}
                 notification={notification}

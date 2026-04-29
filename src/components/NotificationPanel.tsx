@@ -53,7 +53,7 @@ export default function NotificationPanel({ isOpen, onClose }: Props) {
       {/* Panel */}
       <div
         ref={panelRef}
-        className={`fixed top-0 right-0 h-full w-96 bg-gray-100 shadow-2xl z-50 transform transition-transform duration-300 ease-in-out ${
+        className={`fixed top-0 right-0 h-full w-96 bg-gray-100 shadow-2xl z-50 transform transition-transform duration-300 ease-in-out mx-0 ${
           isOpen ? 'translate-x-0' : 'translate-x-full'
         }`}
       >

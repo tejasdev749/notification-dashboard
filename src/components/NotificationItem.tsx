@@ -45,8 +45,8 @@ export default function NotificationItem({ notification, onMarkRead }: Props) {
 
   return (
     <div
-      className={`p-4 border-b border-gray-50 transition-colors rounded-3xl ${
-        !notification.read ? 'bg-sky-50 ' : ''
+      className={`p-4  transition-colors hover:rounded-3xl  ${
+        !notification.read ? 'bg-gray-100 ' : ''
       }`}
     >
       <div className="flex items-start justify-between gap-3">
