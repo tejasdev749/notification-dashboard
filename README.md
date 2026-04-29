@@ -1,11 +1,28 @@
-# React + TypeScript + Vite
+# Real-Time Notification Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React + TypeScript + Vite application demonstrating a real-time notification dashboard.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **Notification list**: Displays notifications in a clean card-style interface.
+- **Real-time updates**: New notifications are generated automatically every few seconds.
+- **Mark as read**: Individual unread notifications can be marked as read.
+- **Unread counter**: The bell badge updates in real time as unread notifications change.
+- **Auto reconnect logic**: Simulated connection status with reconnect handling.
+- **Clean UI**: Modern Tailwind-powered UI with Work Sans font and responsive styling.
+
+## App Overview
+
+This project implements a notification dashboard with a notification bell, an unread badge, and a slide-over panel that shows notifications. The notification list supports read/unread filtering and keeps the badge count synchronized in real time.
+
+## Additional Notes
+
+The app is built using:
+
+- React
+- TypeScript
+- Vite
+- Tailwind CSS
 
 ## React Compiler
 

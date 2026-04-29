@@ -92,7 +92,6 @@ export function useNotifications() {
 
   return {
     notifications,
-    setNotifications,
     connected,
     unreadCount,
     markAsRead,
