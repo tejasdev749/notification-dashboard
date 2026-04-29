@@ -2,20 +2,20 @@ import { useEffect, useState, useCallback } from "react"
 import type { Notification } from "../types/notification"
 
 const NOTIFICATION_MESSAGES = [
-  "New message received",
-  "Task completed successfully",
-  "System update available",
-  "New comment on your post",
-  "Payment processed",
-  "Weekly report ready",
-  "Security alert detected",
-  "Backup completed",
-  "New follower added",
-  "Meeting reminder"
+  "Good news, James! Your order has been shipped and is on its way. 🚚",
+  "You're all set! ✅ Your flight to London is confirmed.",
+  "We miss you, Leo! Come back and see what's new.",
+  "Price drop! 📉 The items in your wishlist are now on sale.",
+  "Did you forget something? 🛒 Your cart is waiting. Use code TAKE10 for 10% off!",
+  "You haven't checked your tasks today! Tap to update",
+  "New feature available: Dark mode is here!",
+  "Hurry! ⚡ 20% off ends tonight. Don't miss out on your favorites!",
+  "Just for you, Sarah: 🎁 Free shipping on your next order. Shop now!",
+  "It's here! 🚀 Discover our new Summer Collection before it sells out."
 ]
 
-const NOTIFICATION_TYPES: Array<'info' | 'warning' | 'success' | 'error'> = [
-  'info', 'success', 'warning', 'error'
+const NOTIFICATION_TYPES: Array<'reminder' | 'launch' | 'offer'> = [
+  'reminder', 'launch', 'offer'
 ]
 
 export function useNotifications() {

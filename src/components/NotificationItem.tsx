@@ -7,27 +7,27 @@ type Props = {
 
 const getTypeColor = (type?: string) => {
   switch (type) {
-    case 'success':
-      return 'bg-green-100 text-green-800 border-green-200'
-    case 'warning':
-      return 'bg-yellow-100 text-yellow-800 border-yellow-200'
-    case 'error':
-      return 'bg-red-100 text-red-800 border-red-200'
+    case 'launch':
+      return 'bg-amber-100 text-green-800 border-amber-200'
+    case 'offer':
+      return 'bg-sky-100 text-yellow-800 border-sky-200'
+    case 'reminder':
+      return 'bg-cyan-100 text-red-800 border-cyan-200'
     default:
-      return 'bg-blue-100 text-blue-800 border-blue-200'
+      return 'bg-red-100 text-blue-800 border-blue-200'
   }
 }
 
 const getTypeIcon = (type?: string) => {
   switch (type) {
-    case 'success':
-      return '✓'
-    case 'warning':
-      return '⚠'
-    case 'error':
-      return '✕'
+    case 'reminder':
+      return '🛒'
+    case 'offer':
+      return '🎁'
+    case 'launch':
+      return '🚀'
     default:
-      return 'ℹ'
+      return '⚡'
   }
 }
 
@@ -51,9 +51,9 @@ export default function NotificationItem({ notification, onMarkRead }: Props) {
     >
       <div className="flex items-start justify-between gap-3">
         <div className="flex items-start gap-3 flex-1">
-          {/* <div className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-medium ${getTypeColor(notification.type)}`}>
+          <div className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-medium ${getTypeColor(notification.type)}`}>
             {getTypeIcon(notification.type)}
-          </div> */}
+          </div>
           <div className="flex-1 min-w-0">
             <p className={`text-sm ${!notification.read ? 'font-semibold text-gray-900' : 'text-gray-700'}`}>
               {notification.message}

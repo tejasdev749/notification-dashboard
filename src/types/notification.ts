@@ -3,5 +3,5 @@ export type Notification = {
   message: string
   read: boolean
   timestamp: Date
-  type?: 'info' | 'warning' | 'success' | 'error'
+  type?: 'reminder' | 'launch' | 'offer'
 }
