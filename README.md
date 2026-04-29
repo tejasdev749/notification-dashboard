@@ -2,6 +2,9 @@
 
 A React + TypeScript + Vite application demonstrating a real-time notification dashboard.
 
+<img width="1918" height="966" alt="image" src="https://github.com/user-attachments/assets/f44ee789-7320-43c7-9505-9a8196ee7d91" />
+
+
 ## Features
 
 - **Notification list**: Displays notifications in a clean card-style interface.
