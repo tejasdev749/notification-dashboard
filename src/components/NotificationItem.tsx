@@ -45,7 +45,7 @@ export default function NotificationItem({ notification, onMarkRead }: Props) {
 
   return (
     <div
-      className={`p-4  transition-colors hover:rounded-3xl  ${
+      className={`p-4  transition-colors hover:rounded-3xl hover:bg-gray-200  ${
         !notification.read ? 'bg-gray-100 ' : ''
       }`}
     >
@@ -58,23 +58,33 @@ export default function NotificationItem({ notification, onMarkRead }: Props) {
             <p className={`text-sm ${!notification.read ? 'font-semibold text-gray-900' : 'text-gray-700'}`}>
               {notification.message}
             </p>
-            <p className="text-xs text-gray-500 mt-1">
-              {formatTime(notification.timestamp)}
-            </p>
+            
           </div>
         </div>
         <div className="flex items-center gap-2">
+          <p className="text-xs text-gray-500">
+              {formatTime(notification.timestamp)}
+            </p>
           {!notification.read && (
-            <>
-              <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
               <button
-              title="Mark as read"
+                title="Mark as read"
                 onClick={() => onMarkRead(notification.id)}
-                className="text-xs text-blue-600 hover:text-blue-800 font-medium"
+                className="text-blue-600 hover:text-blue-800  rounded-full bg-blue-500 transition-colors"
               >
-                Mark as read
+                <svg
+                  className="w-4 h-4"
+                  fill="none"
+                  stroke="#ffffff"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M5 13l4 4L19 7"
+                  />
+                </svg>
               </button>
-            </>
           )}
         </div>
       </div>

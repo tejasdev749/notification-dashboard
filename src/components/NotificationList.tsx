@@ -39,13 +39,13 @@ export default function NotificationList({
             </div>
           </div>
           {notifications.length > 0 && (
-            <div className="flex gap-2">
+            <div className="flex gap-2 self-center pr-4">
               {unreadCount > 0 && (
                 <button
                   onClick={onMarkAllRead}
                   className="text-xs text-blue-600 hover:text-blue-800 font-medium"
                 >
-                  Mark all read
+                 Mark all read
                 </button>
               )}
             </div>
@@ -82,9 +82,25 @@ export default function NotificationList({
         {filteredNotifications.length === 0 ? (
           <div className="flex flex-col items-center justify-center h-full text-gray-500 p-8">
             <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mb-4">
-              <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 17h5l-5 5-5-5h5v-6h5v6z" />
-              </svg>
+              <svg
+          className="w-6 h-6"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9"
+          />
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M13.73 21a2 2 0 01-3.46 0"
+          />
+        </svg>
             </div>
             <p className="text-sm font-medium">No {activeTab} notifications</p>
             <p className="text-xs text-center mt-1">
