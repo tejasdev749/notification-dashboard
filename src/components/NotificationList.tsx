@@ -6,7 +6,6 @@ type Props = {
   notifications: Notification[]
   onMarkRead: (id: number) => void
   onMarkAllRead: () => void
-  onClearAll: () => void
   connected: boolean
 }
 
@@ -14,7 +13,6 @@ export default function NotificationList({
   notifications,
   onMarkRead,
   onMarkAllRead,
-  onClearAll,
   connected
 }: Props) {
   const [activeTab, setActiveTab] = useState<"unread" | "read">("unread")
