@@ -1,4 +1,5 @@
-import { createContext, useContext }, React from 'react'
+import { createContext, useContext } from 'react'
+import React from 'react'
 import { useNotifications } from '../hooks/useNotifications'
 import type { Notification } from '../types/notification'
 
