@@ -1,4 +1,4 @@
-import { createContext, useContext, ReactNode } from 'react'
+import { createContext, useContext }, React from 'react'
 import { useNotifications } from '../hooks/useNotifications'
 import type { Notification } from '../types/notification'
 
@@ -13,7 +13,7 @@ interface NotificationsContextType {
 
 const NotificationsContext = createContext<NotificationsContextType | undefined>(undefined)
 
-export function NotificationsProvider({ children }: { children: ReactNode }) {
+export function NotificationsProvider({ children }: { children: React.ReactNode }) {
   const notificationsData = useNotifications()
 
   return (
