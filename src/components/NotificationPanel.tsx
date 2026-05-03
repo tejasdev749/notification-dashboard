@@ -74,7 +74,6 @@ export default function NotificationPanel({ isOpen, onClose }: Props) {
             notifications={notifications}
             onMarkRead={markAsRead}
             onMarkAllRead={markAllAsRead}
-            {/* onClearAll={clearNotifications} */}
             connected={connected}
           />
         </div>
