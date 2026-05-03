@@ -14,7 +14,7 @@ export default function NotificationPanel({ isOpen, onClose }: Props) {
     connected,
     markAsRead,
     markAllAsRead,
-    clearNotifications
+    // clearNotifications
   } = useNotificationsContext()
 
   useEffect(() => {
@@ -74,7 +74,7 @@ export default function NotificationPanel({ isOpen, onClose }: Props) {
             notifications={notifications}
             onMarkRead={markAsRead}
             onMarkAllRead={markAllAsRead}
-            onClearAll={clearNotifications}
+            {/* onClearAll={clearNotifications} */}
             connected={connected}
           />
         </div>
